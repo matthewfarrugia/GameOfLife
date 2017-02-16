@@ -19,4 +19,40 @@ public interface GameState {
      * @return Number of columns the game has
      */
     int getCols();
+    
+    /*
+     * Returns the number of columns in a particular row
+     * @param row
+     * @return Number of columns the game has
+     */
+	int getCols(int row);
+	
+    /*
+     * Sets the value of selected cell to true/alive
+     * @param row
+     * @param col
+     */
+	void createCell(int row, int col);
+	
+    /*
+     * Sets the value of selected cell to false/empty
+     * @param row
+     * @param col
+     */
+	void killCell(int row, int col);
+	
+    /*
+     * Checks every neighbour and increments the neighbour integer if they are alive
+     * @param row
+     * @param col
+     */
+	int countNeighbours(int row, int col);
+	
+    /*
+     * Checks if input parameters are in bounds of the 2D ArrayList
+     * @param row
+     * @param col
+     * @return True or False
+     */
+	boolean checkBounds(int row, int col);
 }

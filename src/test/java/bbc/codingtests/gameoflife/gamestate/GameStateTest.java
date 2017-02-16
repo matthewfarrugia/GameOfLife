@@ -21,4 +21,12 @@ public class GameStateTest {
         assertEquals("The game should have 3 columns", 3, testState.getCols());
         assertEquals("The game should have 3 rows", 3, testState.getRows());
     }
+    
+    //I assume all input strings will not have a terminating '\n' character
+    @Test
+    public void testToString() {
+        String input = "...\n***\n..*";
+        GameState testState = new GameStateImpl(input);
+        assertEquals("String output should match input", input, testState.toString());
+    }
 }
